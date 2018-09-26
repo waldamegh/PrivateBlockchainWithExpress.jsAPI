@@ -28,7 +28,7 @@ blockchain.getBlockHeight().then(height => {
 | response with a welcome message                              |    
 |_____________________________________________________________*/
 app.get('/', (req, res) => {
-    res.send('Welcome to the Privet Blockcahain API.');
+    res.send('Welcome to the Private Blockcahain API.');
 });
 
 
@@ -57,12 +57,12 @@ app.get('/block/:blockHeight', (req, res) => {
 |_____________________________________________________________*/
 app.post('/block', (req, res) => {
     //handling incorrect input through Joi
-    const schema = { data: Joi.string().min(1).required() }
+    const schema = { body: Joi.string().min(1).required() }
     const { error } = Joi.validate(req.body, schema);
     if (error) return res.status(400).send(error.details[0].message);
 
     //adding new block
-    blockchain.addBlock(new Block(req.body.data)).then(block => { 
+    blockchain.addBlock(new Block(req.body.body)).then(block => { 
         //update chain height
         chainHeight = block.height;
         //sending new block info

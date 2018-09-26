@@ -1,6 +1,6 @@
 # Private Blockchain with Express.js API
 
-This project illustrates a simple example of private blockchain stored in LevelDB and interact with it through a web server API (Express framework)
+This project illustrates a simple example of private blockchain stored in LevelDB and interacted with it through a web server API (Express framework)
 
 ## RESTful web API (Express.js framework)
 
@@ -64,5 +64,8 @@ http://localhost:8000/block/{blockHeight}
 - HTTP Post (Add new block)
 ```
 http://localhost:8000/block
-Request body: {"data":"block number(..)"}
+Request body: 
+{
+      "body": "Testing block with test string data"
+}
 ```
