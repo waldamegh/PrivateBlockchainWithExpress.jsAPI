@@ -2,7 +2,7 @@
 
 This project illustrates a simple example of private blockchain stored in LevelDB and interact with it through a web server API (Express framework)
 
-##RESTful web API (Express.js framework)
+## RESTful web API (Express.js framework)
 
 The app.js file has three endpoints:
 
